@@ -1,0 +1,15 @@
+#navbarItemsCont {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+
+}
+
+nav {
+    background-color: transparent;
+    position: fixed;
+    top : 0;
+}
+.hidden {
+    display : none;
+}
