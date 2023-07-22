@@ -3,9 +3,10 @@ const app = express();
 const path = require('path')
 
 app.use(express.urlencoded({extended:true}));
-app.use('/',require('./routes'));
-app.use(express.static(path.join('..', 'client', 'public'  )));
 
+app.use(express.static(path.join('..', 'client', 'build'  )));
+
+app.use('/',require('./routes'));
 
 
 app.listen(3000,()=>{

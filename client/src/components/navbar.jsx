@@ -1,7 +1,17 @@
 import React from "react";
-import './navbar.css'
+import './navbar.css';
+import { useState } from "react";
+
+import {Link}from 'react-router'
 
 function Navbar(props){
+    useState(()=> {
+
+
+
+
+        
+    })
    return <>
    <nav className="navbar navbar-expand-lg fixed-top ">
     <div className="container-fluid">
@@ -13,9 +23,9 @@ function Navbar(props){
        <span class="navbar-toggler-icon"></span></button>    
             <div className="collapse navbar-collapse">
                 <div className="navbar-nav" id="#navbarItemsCont">
-                    <a href="#" className="nav-link"></a>
-                    <a href="#" className="nav-link"></a>
-                    <a href="#" className="nav-link"></a>
+                    <a href="#" className="nav-link">contact</a>
+                    <a href="#" className="nav-link">home</a>
+                    <a href="#" className="nav-link">about</a>
                 </div>
     
             </div>

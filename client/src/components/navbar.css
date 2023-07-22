@@ -7,8 +7,9 @@
 
 nav {
     background-color: transparent;
-    position: fixed;
+    z-index: 1;
     top : 0;
+    max-height: 59px;
 }
 .hidden {
     display : none;

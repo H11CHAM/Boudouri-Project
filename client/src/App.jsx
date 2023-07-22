@@ -1,9 +1,49 @@
 
 import './app.css';
 import Navbar from './components/navbar'
+import { createRoutesFromElements,createBrowserRouter,RouterProvider,Route,Outlet } from 'react-router';
+import Home from './pages/Home';
+import Course from './pages/CourseDet';
+const Layout = ()=>{
+  return <>
+  <Navbar/>
 
-const navbar = document.querySelector('nav');
-function toggleVisibility(){
+  <Outlet/>
+  </>
+}
+
+
+
+
+
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+   <Route path='/' element={<Layout/>}>
+     <Route index element ={<Home/>}/>
+     <Route path='/course' element={<Course/>}/>
+   </Route>
+
+  )
+)
+
+
+
+/*document.addEventListener('scroll',function(event){
+     const desiredDistance = 150;
+    var  classes = navbar.classList;
+    if(document.documentElement.scrollTop >= desiredDistance ) {
+      classes.add('hidden');
+    } else {
+      classes.remove('hidden')
+    }
+})*/
+
+
+function App() {
+  
+//const navbar = document.querySelector('nav');
+/*function toggleVisibility(){
   const element = document.getElementById('firstSection');
    var scrollBottom = element.scrollHeight / 2;
   
@@ -16,36 +56,20 @@ function toggleVisibility(){
   }
   
 
-}
-window.addEventListener('scroll',toggleVisibility);
-
-document.addEventListener('scroll',function(event){
-     const desiredDistance = 150;
-    var  classes = navbar.classList;
-    if(document.documentElement.scrollTop >= desiredDistance ) {
-      classes.add('hidden');
-    } else {
-      classes.remove('hidden')
-    }
+}*/
+//window.addEventListener('scroll',toggleVisibility);
 
 
-})
 
 
-function App() {
+
   return <>
-   <div className='container-fluid section' id="firstSection">
+     
 
-   <Navbar/>
-     this is the first section 
+<RouterProvider router={router} />
 
-   </div>
+
    
-   <div className='container-fluid section' id="secondSection">
-
-     this is the second section 
-
-   </div>
   </>
 }
 
