@@ -6,10 +6,18 @@ import { coursesData } from '../coursesData';
 function CourseDet(){
     const {id} = useContext(CourseContext);
     
-    coursesData.filter((course)=>{
-       course.id === parseInt(id);
+   const filteredCourse =  coursesData.filter((course)=>{
+     return  course.id === parseInt(id);
     })
+   console.log(filteredCourse);
    
+   return <div>
+   <img src={filteredCourse.imgURL} alt="" />
+   <h3>{filteredCourse.title}</h3>
 
+
+
+   </div>
+   
 }
 export default CourseDet;

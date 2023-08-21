@@ -1,16 +1,27 @@
-#navbarItemsCont {
-   display: flex;
-   flex-direction: row;
-   justify-content: space-between;
-
-}
-
 nav {
-    background-color: transparent;
+    background-color: #91C8E4;
+    position: relative; /* Set position to relative to create a new stacking context */
     z-index: 1;
-    top : 0;
+    top: 0;
     max-height: 59px;
-}
+    color : rgb(188, 183, 183);
+  }
+  .nav-link {
+    color : rgb(188, 183, 183);
+  }
+  nav navbar-brand {
+
+    color : rgb(188, 183, 183);
+   font-size: large;
+  }
+  
+  #navbarItemsCont {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
 .hidden {
     display : none;
 }

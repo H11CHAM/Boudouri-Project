@@ -1,9 +1,11 @@
 
 import './app.css';
 import Navbar from './components/navbar'
-import { createRoutesFromElements,createBrowserRouter,RouterProvider,Route,Outlet } from 'react-router';
+import { createRoutesFromElements,createBrowserRouter,RouterProvider,Route,Outlet } from 'react-router-dom';
 import Home from './pages/Home';
-import Course from './pages/CourseDet';
+
+import { CourseContextProvider } from './CourseContext';
+import CourseDet from './pages/CourseDet';
 const Layout = ()=>{
   return <>
   <Navbar/>
@@ -21,7 +23,7 @@ const router = createBrowserRouter(
   createRoutesFromElements(
    <Route path='/' element={<Layout/>}>
      <Route index element ={<Home/>}/>
-     <Route path='/course' element={<Course/>}/>
+     <Route path='/CourseDet' element={<CourseDet/>}/>
    </Route>
 
   )
@@ -64,10 +66,10 @@ function App() {
 
 
   return <>
-     
-
+      
+  <CourseContextProvider>
 <RouterProvider router={router} />
-
+</CourseContextProvider>
 
    
   </>

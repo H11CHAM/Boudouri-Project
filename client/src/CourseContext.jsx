@@ -7,13 +7,20 @@ export const  CourseContext = createContext({});
 
 
 export const CourseContextProvider = (props)=>{
+  const [linkValue,setLinkValue] = useState(false);
+
+    function handleClick(){
+      setLinkValue(true)
+    }
+
+
     const [id,setId] = useState("");
     function passId(id){
 
       setId(id.toString())
 
     }
-    contextValues ={id,passId} ;
+   var contextValues ={id,passId,handleClick} ;
     return <CourseContext.Provider value={contextValues}>{props.children} </CourseContext.Provider>
 }
 
